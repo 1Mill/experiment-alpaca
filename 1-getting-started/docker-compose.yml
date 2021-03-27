@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  node:
+    image: node:15-alpine
+    environment:
+      ALPACA_BASE_URL: https://paper-api.alpaca.markets
+      ALPACA_PUBLIC_KEY: $ALPACA_PUBLIC_KEY
+      ALPACA_SECRET_KEY: $ALPACA_SECRET_KEY
+      NODE_ENV: development
+    volumes:
+      - ./:/app
+    working_dir: /app
